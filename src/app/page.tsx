@@ -1,5 +1,10 @@
 import Image from "next/image";
 
+const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "";
+const basePath =
+  process.env.GITHUB_ACTIONS === "true" && repoName ? `/${repoName}` : "";
+const logoSrc = `${basePath}/logo-nowoczesna.png`;
+
 const filaryProgramu = [
   {
     tytul: "Nowoczesna gospodarka",
@@ -103,7 +108,7 @@ export default function Home() {
       <header className="sticky top-0 z-20 border-b border-border bg-white/85 backdrop-blur-md">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <Image
-            src="/logo-nowoczesna.png"
+            src={logoSrc}
             alt="Nowoczesna"
             width={220}
             height={73}
