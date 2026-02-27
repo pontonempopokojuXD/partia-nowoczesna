@@ -5,7 +5,7 @@ import { MembershipForm } from "@/components/membership-form";
 const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "";
 const basePath =
   process.env.GITHUB_ACTIONS === "true" && repoName ? `/${repoName}` : "";
-const logoSrc = `${basePath}/logo-nowoczesna-cropped.png`;
+const logoSrc = `${basePath}/logo-nowoczesna-transparent.png`;
 
 const filaryProgramu = [
   {
@@ -112,9 +112,9 @@ export default function Home() {
           <Image
             src={logoSrc}
             alt="Nowoczesna"
-            width={252}
-            height={70}
-            className="h-auto w-[252px]"
+            width={264}
+            height={60}
+            className="h-auto w-[264px]"
             priority
           />
           <div className="hidden items-center gap-6 text-sm font-medium text-text-muted lg:flex">
