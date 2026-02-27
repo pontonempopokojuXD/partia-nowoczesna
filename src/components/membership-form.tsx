@@ -93,37 +93,37 @@ export function MembershipForm() {
   };
 
   return (
-    <form className="mt-7 grid gap-3 sm:grid-cols-2" onSubmit={onSubmit}>
+    <form className="mt-6 grid gap-3.5 sm:mt-7 sm:grid-cols-2" onSubmit={onSubmit}>
       <input
-        className="rounded-xl border border-white/30 bg-white/10 px-4 py-3 text-sm placeholder:text-white/70 focus:border-white focus:outline-none"
+        className="rounded-xl border border-white/30 bg-white/10 px-4 py-3.5 text-base placeholder:text-white/70 focus:border-white focus:outline-none sm:text-sm"
         type="text"
         placeholder="Imię i nazwisko"
         value={form.fullName}
         onChange={(event) => onFieldChange("fullName", event.target.value)}
       />
       <input
-        className="rounded-xl border border-white/30 bg-white/10 px-4 py-3 text-sm placeholder:text-white/70 focus:border-white focus:outline-none"
+        className="rounded-xl border border-white/30 bg-white/10 px-4 py-3.5 text-base placeholder:text-white/70 focus:border-white focus:outline-none sm:text-sm"
         type="email"
         placeholder="Adres e-mail"
         value={form.email}
         onChange={(event) => onFieldChange("email", event.target.value)}
       />
       <input
-        className="rounded-xl border border-white/30 bg-white/10 px-4 py-3 text-sm placeholder:text-white/70 focus:border-white focus:outline-none"
+        className="rounded-xl border border-white/30 bg-white/10 px-4 py-3.5 text-base placeholder:text-white/70 focus:border-white focus:outline-none sm:text-sm"
         type="tel"
         placeholder="Numer telefonu"
         value={form.phone}
         onChange={(event) => onFieldChange("phone", event.target.value)}
       />
       <input
-        className="rounded-xl border border-white/30 bg-white/10 px-4 py-3 text-sm placeholder:text-white/70 focus:border-white focus:outline-none"
+        className="rounded-xl border border-white/30 bg-white/10 px-4 py-3.5 text-base placeholder:text-white/70 focus:border-white focus:outline-none sm:text-sm"
         type="text"
         placeholder="Miasto"
         value={form.city}
         onChange={(event) => onFieldChange("city", event.target.value)}
       />
       <textarea
-        className="rounded-xl border border-white/30 bg-white/10 px-4 py-3 text-sm placeholder:text-white/70 focus:border-white focus:outline-none sm:col-span-2"
+        className="rounded-xl border border-white/30 bg-white/10 px-4 py-3.5 text-base placeholder:text-white/70 focus:border-white focus:outline-none sm:col-span-2 sm:text-sm"
         rows={3}
         placeholder="Dlaczego chcesz do nas dołączyć? (opcjonalnie)"
         value={form.motivation}
@@ -138,9 +138,9 @@ export function MembershipForm() {
         onChange={(event) => onFieldChange("company", event.target.value)}
       />
 
-      <label className="sm:col-span-2 flex items-start gap-2 text-xs text-white/85">
+      <label className="sm:col-span-2 flex items-start gap-2 text-sm leading-relaxed text-white/85 sm:text-xs">
         <input
-          className="mt-0.5"
+          className="mt-1"
           type="checkbox"
           checked={form.consent}
           onChange={(event) => onFieldChange("consent", event.target.checked)}
@@ -150,7 +150,7 @@ export function MembershipForm() {
       </label>
 
       {(errors.fullName || errors.email || errors.city || errors.consent) && (
-        <p className="sm:col-span-2 text-xs text-red-200">
+        <p className="sm:col-span-2 text-sm text-red-200 sm:text-xs">
           {errors.fullName ?? errors.email ?? errors.city ?? errors.consent}
         </p>
       )}
@@ -166,7 +166,7 @@ export function MembershipForm() {
       )}
 
       <button
-        className="rounded-xl bg-white px-4 py-3 text-sm font-semibold text-primary-700 transition hover:bg-slate-100 sm:col-span-2 disabled:cursor-not-allowed disabled:opacity-60"
+        className="rounded-xl bg-white px-4 py-3.5 text-base font-semibold text-primary-700 transition hover:bg-slate-100 sm:col-span-2 sm:text-sm disabled:cursor-not-allowed disabled:opacity-60"
         type="submit"
         disabled={isSubmitting}
       >

@@ -107,16 +107,22 @@ const faq = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,#dceeff_0%,#f7fbff_22%,#ffffff_65%)] text-foreground">
-      <header className="sticky top-0 z-20 border-b border-border bg-white/85 backdrop-blur-md">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <header className="sticky top-0 z-20 border-b border-border bg-white/90 backdrop-blur-md">
+        <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2.5 sm:px-6 sm:py-4">
           <Image
             src={logoSrc}
             alt="Nowoczesna"
             width={278}
             height={64}
-            className="h-auto w-[278px]"
+            className="h-auto w-[190px] sm:w-[220px] lg:w-[278px]"
             priority
           />
+          <a
+            href="#dolacz"
+            className="rounded-full bg-primary-600 px-3.5 py-2 text-xs font-semibold text-white shadow-md shadow-primary-600/35 transition hover:bg-primary-700 lg:hidden"
+          >
+            Dołącz
+          </a>
           <div className="hidden items-center gap-6 text-sm font-medium text-text-muted lg:flex">
             <a href="#program">Program</a>
             <a href="#aktualnosci">Aktualności</a>
@@ -132,45 +138,45 @@ export default function Home() {
         </nav>
       </header>
 
-      <main>
+      <main className="pb-24 md:pb-0">
         <AnimatedSection className="relative overflow-hidden">
           <div className="absolute left-1/2 top-[-230px] h-[460px] w-[760px] -translate-x-1/2 rounded-full bg-primary-500/15 blur-3xl" />
-          <div className="absolute -left-20 top-24 h-56 w-56 rounded-full bg-sky-accent/20 blur-3xl" />
-          <div className="absolute -right-20 top-36 h-56 w-56 rounded-full bg-primary-400/20 blur-3xl" />
-          <div className="mx-auto grid max-w-6xl gap-6 px-6 py-16 lg:grid-cols-[1.2fr_0.8fr]">
-            <article className="fade-up rounded-3xl border border-primary-200/70 bg-white/90 p-8 shadow-xl shadow-primary-600/10 backdrop-blur-sm md:p-10">
+          <div className="absolute -left-20 top-24 hidden h-56 w-56 rounded-full bg-sky-accent/20 blur-3xl sm:block" />
+          <div className="absolute -right-20 top-36 hidden h-56 w-56 rounded-full bg-primary-400/20 blur-3xl sm:block" />
+          <div className="mx-auto grid max-w-6xl gap-4 px-4 py-8 sm:gap-6 sm:px-6 sm:py-12 lg:grid-cols-[1.2fr_0.8fr] lg:py-16">
+            <article className="fade-up rounded-3xl border border-primary-200/70 bg-white/95 p-5 shadow-lg shadow-primary-600/10 backdrop-blur-sm sm:p-8 md:p-10">
               <p className="mb-4 inline-block rounded-full border border-primary-200 bg-primary-600/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary-700">
                 Ruch obywatelski i odpowiedzialne państwo
               </p>
-              <h1 className="text-4xl font-extrabold tracking-tight text-balance text-[#0B2F73] md:text-5xl">
+              <h1 className="text-3xl font-extrabold tracking-tight text-balance text-[#0B2F73] sm:text-4xl md:text-5xl">
                 Dołącz do Nowoczesnej i twórz z nami lepszą przyszłość Polski.
               </h1>
-              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-text-muted">
+              <p className="mt-4 max-w-2xl text-base leading-relaxed text-text-muted sm:mt-5 sm:text-lg">
                 Łączymy profesjonalizm, odwagę i konkretne działania. Budujemy
                 nowoczesne państwo: sprawne, transparentne i przyjazne dla
                 obywateli.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-6 flex flex-col gap-2.5 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-3">
                 <a
                   href="#dolacz"
-                  className="rounded-full bg-primary-600 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-primary-600/35 transition hover:bg-primary-700"
+                  className="rounded-full bg-primary-600 px-6 py-3 text-center text-sm font-semibold text-white shadow-lg shadow-primary-600/35 transition hover:bg-primary-700"
                 >
                   Chcę dołączyć
                 </a>
                 <a
                   href="#program"
-                  className="rounded-full border border-border bg-white px-7 py-3 text-sm font-semibold text-foreground transition hover:bg-surface"
+                  className="rounded-full border border-border bg-white px-6 py-3 text-center text-sm font-semibold text-foreground transition hover:bg-surface"
                 >
                   Poznaj nasz program
                 </a>
               </div>
-              <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="mt-7 grid grid-cols-2 gap-3 sm:mt-9 sm:gap-4 lg:grid-cols-4">
                 {liczby.map((item) => (
                   <div
                     key={item.etykieta}
-                    className="rounded-2xl border border-primary-100 bg-primary-50/60 p-4"
+                    className="rounded-2xl border border-primary-100 bg-primary-50/60 p-3.5 sm:p-4"
                   >
-                    <p className="text-2xl font-bold text-primary-700">
+                    <p className="text-xl font-bold text-primary-700 sm:text-2xl">
                       {item.wartosc}
                     </p>
                     <p className="text-xs uppercase tracking-wide text-text-muted">
@@ -181,11 +187,11 @@ export default function Home() {
               </div>
             </article>
 
-            <aside className="fade-up rounded-3xl bg-[linear-gradient(145deg,#0A3D91_0%,#0D57C6_55%,#2EA3F2_100%)] p-8 text-white shadow-xl shadow-primary-700/30 md:p-10">
+            <aside className="fade-up rounded-3xl bg-[linear-gradient(145deg,#0A3D91_0%,#0D57C6_55%,#2EA3F2_100%)] p-5 text-white shadow-xl shadow-primary-700/30 sm:p-8 md:p-10">
               <p className="text-xs font-semibold uppercase tracking-wider text-white/80">
                 Dlaczego warto?
               </p>
-              <h2 className="mt-3 text-3xl font-bold leading-tight">
+              <h2 className="mt-3 text-2xl font-bold leading-tight sm:text-3xl">
                 Tu Twoje zaangażowanie ma realny wpływ.
               </h2>
               <ul className="mt-6 space-y-4 text-sm leading-relaxed text-white/95">
@@ -209,14 +215,14 @@ export default function Home() {
           </div>
         </AnimatedSection>
 
-        <AnimatedSection id="program" className="py-16" delay={0.05}>
-          <div className="mx-auto max-w-6xl px-6">
+        <AnimatedSection id="program" className="py-12 md:py-16" delay={0.05}>
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <div className="flex flex-wrap items-end justify-between gap-4">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-wide text-primary-600">
                   Program
                 </p>
-                <h2 className="mt-2 text-3xl font-bold text-[#0B2F73]">
+                <h2 className="mt-2 text-2xl font-bold text-[#0B2F73] sm:text-3xl">
                   Priorytety Nowoczesnej na najbliższe lata
                 </h2>
               </div>
@@ -227,11 +233,11 @@ export default function Home() {
                 Zobacz pełny program
               </a>
             </div>
-            <div className="mt-7 grid gap-5 md:grid-cols-3">
+            <div className="mt-6 grid gap-4 sm:mt-7 sm:gap-5 md:grid-cols-3">
               {filaryProgramu.map((filar) => (
                 <article
                   key={filar.tytul}
-                  className="fade-up rounded-2xl border border-border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                  className="fade-up rounded-2xl border border-border bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:p-6"
                 >
                   <h3 className="text-lg font-semibold text-[#0B2F73]">
                     {filar.tytul}
@@ -245,19 +251,19 @@ export default function Home() {
           </div>
         </AnimatedSection>
 
-        <AnimatedSection id="aktualnosci" className="bg-surface py-16" delay={0.08}>
-          <div className="mx-auto max-w-6xl px-6">
+        <AnimatedSection id="aktualnosci" className="bg-surface py-12 md:py-16" delay={0.08}>
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <p className="text-sm font-semibold uppercase tracking-wide text-primary-600">
               Tablica informacyjna
             </p>
-            <h2 className="mt-2 text-3xl font-bold text-[#0B2F73]">
+            <h2 className="mt-2 text-2xl font-bold text-[#0B2F73] sm:text-3xl">
               Najnowsze komunikaty i działania
             </h2>
-            <div className="mt-7 grid gap-5 md:grid-cols-3">
+            <div className="mt-6 grid gap-4 sm:mt-7 sm:gap-5 md:grid-cols-3">
               {aktualnosci.map((news) => (
                 <article
                   key={news.tytul}
-                  className="fade-up rounded-2xl border border-border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                  className="fade-up rounded-2xl border border-border bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:p-6"
                 >
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary-600">
                     {news.kategoria}
@@ -275,16 +281,16 @@ export default function Home() {
           </div>
         </AnimatedSection>
 
-        <AnimatedSection id="wydarzenia" className="py-16" delay={0.1}>
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="rounded-3xl border border-primary-100 bg-[linear-gradient(165deg,#f7fbff_0%,#eff6ff_100%)] p-8 md:p-10">
+        <AnimatedSection id="wydarzenia" className="py-12 md:py-16" delay={0.1}>
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <div className="rounded-3xl border border-primary-100 bg-[linear-gradient(165deg,#f7fbff_0%,#eff6ff_100%)] p-5 sm:p-8 md:p-10">
               <p className="text-sm font-semibold uppercase tracking-wide text-primary-600">
                 Wydarzenia
               </p>
-              <h2 className="mt-2 text-3xl font-bold text-[#0B2F73]">
+              <h2 className="mt-2 text-2xl font-bold text-[#0B2F73] sm:text-3xl">
                 Spotkajmy się w Twoim regionie
               </h2>
-              <div className="mt-7 grid gap-4 md:grid-cols-3">
+              <div className="mt-6 grid gap-4 sm:mt-7 md:grid-cols-3">
                 {wydarzenia.map((event) => (
                   <article
                     key={event.nazwa}
@@ -304,19 +310,19 @@ export default function Home() {
           </div>
         </AnimatedSection>
 
-        <AnimatedSection className="py-16" delay={0.12}>
-          <div className="mx-auto max-w-6xl px-6">
+        <AnimatedSection className="py-12 md:py-16" delay={0.12}>
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <p className="text-sm font-semibold uppercase tracking-wide text-primary-600">
               Plan działań
             </p>
-            <h2 className="mt-2 text-3xl font-bold text-[#0B2F73]">
+            <h2 className="mt-2 text-2xl font-bold text-[#0B2F73] sm:text-3xl">
               Jasna roadmapa na 2026 rok
             </h2>
-            <div className="mt-8 space-y-4">
+            <div className="mt-6 space-y-3.5 sm:mt-8 sm:space-y-4">
               {planDzialan.map((etap) => (
                 <article
                   key={etap.tytul}
-                  className="fade-up rounded-2xl border border-border bg-white p-6 shadow-sm"
+                  className="fade-up rounded-2xl border border-border bg-white p-5 shadow-sm sm:p-6"
                 >
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary-600">
                     {etap.etap}
@@ -331,10 +337,10 @@ export default function Home() {
           </div>
         </AnimatedSection>
 
-        <AnimatedSection id="o-nas" className="bg-surface py-16" delay={0.14}>
-          <div className="mx-auto grid max-w-6xl gap-6 px-6 md:grid-cols-2">
-            <article className="fade-up rounded-3xl border border-border bg-white p-8">
-              <h2 className="text-2xl font-bold text-[#0B2F73]">
+        <AnimatedSection id="o-nas" className="bg-surface py-12 md:py-16" delay={0.14}>
+          <div className="mx-auto grid max-w-6xl gap-4 px-4 sm:gap-6 sm:px-6 md:grid-cols-2">
+            <article className="fade-up rounded-3xl border border-border bg-white p-5 sm:p-8">
+              <h2 className="text-xl font-bold text-[#0B2F73] sm:text-2xl">
                 Działamy blisko ludzi
               </h2>
               <p className="mt-4 leading-relaxed text-text-muted">
@@ -343,8 +349,8 @@ export default function Home() {
                 poprawiają codzienne życie.
               </p>
             </article>
-            <article className="fade-up rounded-3xl border border-border bg-white p-8">
-              <h2 className="text-2xl font-bold text-[#0B2F73]">
+            <article className="fade-up rounded-3xl border border-border bg-white p-5 sm:p-8">
+              <h2 className="text-xl font-bold text-[#0B2F73] sm:text-2xl">
                 Transparentność i odpowiedzialność
               </h2>
               <p className="mt-4 leading-relaxed text-text-muted">
@@ -355,19 +361,19 @@ export default function Home() {
           </div>
         </AnimatedSection>
 
-        <AnimatedSection className="py-16" delay={0.16}>
-          <div className="mx-auto max-w-6xl px-6">
+        <AnimatedSection className="py-12 md:py-16" delay={0.16}>
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <p className="text-sm font-semibold uppercase tracking-wide text-primary-600">
               FAQ
             </p>
-            <h2 className="mt-2 text-3xl font-bold text-[#0B2F73]">
+            <h2 className="mt-2 text-2xl font-bold text-[#0B2F73] sm:text-3xl">
               Najczęściej zadawane pytania
             </h2>
-            <div className="mt-7 space-y-4">
+            <div className="mt-6 space-y-3.5 sm:mt-7 sm:space-y-4">
               {faq.map((item) => (
                 <details
                   key={item.pytanie}
-                  className="fade-up rounded-2xl border border-border bg-white p-5 shadow-sm"
+                  className="fade-up rounded-2xl border border-border bg-white p-4 shadow-sm sm:p-5"
                 >
                   <summary className="cursor-pointer text-base font-semibold text-[#0B2F73]">
                     {item.pytanie}
@@ -381,12 +387,12 @@ export default function Home() {
           </div>
         </AnimatedSection>
 
-        <AnimatedSection id="dolacz" className="py-16" delay={0.2}>
-          <div className="mx-auto max-w-4xl rounded-3xl bg-[linear-gradient(145deg,#072A64_0%,#0A3D91_45%,#0D57C6_100%)] px-6 py-10 text-white shadow-xl shadow-primary-700/25 sm:px-10">
+        <AnimatedSection id="dolacz" className="py-12 md:py-16" delay={0.2}>
+          <div className="mx-auto max-w-4xl rounded-3xl bg-[linear-gradient(145deg,#072A64_0%,#0A3D91_45%,#0D57C6_100%)] px-4 py-8 text-white shadow-xl shadow-primary-700/25 sm:px-8 sm:py-10 md:px-10">
             <p className="text-sm font-semibold uppercase tracking-wide text-white/75">
               Formularz członkowski
             </p>
-            <h2 className="mt-2 text-3xl font-bold">
+            <h2 className="mt-2 text-2xl font-bold sm:text-3xl">
               Dołącz do Nowoczesnej i buduj zmianę razem z nami.
             </h2>
             <p className="mt-3 max-w-2xl text-white/85">
@@ -401,15 +407,15 @@ export default function Home() {
           </div>
         </AnimatedSection>
 
-        <AnimatedSection className="bg-surface py-16" delay={0.22}>
-          <div className="mx-auto max-w-6xl px-6">
+        <AnimatedSection className="bg-surface py-12 md:py-16" delay={0.22}>
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <p className="text-sm font-semibold uppercase tracking-wide text-primary-600">
               Jak dołączyć?
             </p>
-            <h2 className="mt-2 text-3xl font-bold text-[#0B2F73]">
+            <h2 className="mt-2 text-2xl font-bold text-[#0B2F73] sm:text-3xl">
               Trzy proste kroki do działania z nami
             </h2>
-            <div className="mt-7 grid gap-4 md:grid-cols-3">
+            <div className="mt-6 grid gap-4 sm:mt-7 md:grid-cols-3">
               {[
                 "Wypełnij formularz i zostaw dane kontaktowe.",
                 "Porozmawiaj z koordynatorem z Twojego regionu.",
@@ -417,7 +423,7 @@ export default function Home() {
               ].map((step, index) => (
                 <article
                   key={step}
-                  className="rounded-2xl border border-border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                  className="rounded-2xl border border-border bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:p-6"
                 >
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary-600">
                     Krok {index + 1}
@@ -441,7 +447,7 @@ export default function Home() {
 
         <a
           href="#dolacz"
-          className="fixed bottom-4 left-1/2 z-30 w-[calc(100%-2rem)] -translate-x-1/2 rounded-full bg-primary-600 px-5 py-3 text-center text-sm font-semibold text-white shadow-xl shadow-primary-600/40 md:hidden"
+          className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-1/2 z-30 w-[calc(100%-1.25rem)] -translate-x-1/2 rounded-full bg-primary-600 px-5 py-3.5 text-center text-sm font-semibold text-white shadow-xl shadow-primary-600/40 md:hidden"
         >
           Dołącz teraz
         </a>
