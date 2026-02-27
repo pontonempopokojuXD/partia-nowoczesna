@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { AnimatedSection } from "@/components/animated-section";
+import { MembershipForm } from "@/components/membership-form";
 
 const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "";
 const basePath =
@@ -130,7 +132,7 @@ export default function Home() {
       </header>
 
       <main>
-        <section className="relative overflow-hidden">
+        <AnimatedSection className="relative overflow-hidden">
           <div className="absolute left-1/2 top-[-230px] h-[460px] w-[760px] -translate-x-1/2 rounded-full bg-primary-500/15 blur-3xl" />
           <div className="absolute -left-20 top-24 h-56 w-56 rounded-full bg-sky-accent/20 blur-3xl" />
           <div className="absolute -right-20 top-36 h-56 w-56 rounded-full bg-primary-400/20 blur-3xl" />
@@ -204,9 +206,9 @@ export default function Home() {
               </a>
             </aside>
           </div>
-        </section>
+        </AnimatedSection>
 
-        <section id="program" className="py-16">
+        <AnimatedSection id="program" className="py-16" delay={0.05}>
           <div className="mx-auto max-w-6xl px-6">
             <div className="flex flex-wrap items-end justify-between gap-4">
               <div>
@@ -240,9 +242,9 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </AnimatedSection>
 
-        <section id="aktualnosci" className="bg-surface py-16">
+        <AnimatedSection id="aktualnosci" className="bg-surface py-16" delay={0.08}>
           <div className="mx-auto max-w-6xl px-6">
             <p className="text-sm font-semibold uppercase tracking-wide text-primary-600">
               Tablica informacyjna
@@ -270,9 +272,9 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </AnimatedSection>
 
-        <section id="wydarzenia" className="py-16">
+        <AnimatedSection id="wydarzenia" className="py-16" delay={0.1}>
           <div className="mx-auto max-w-6xl px-6">
             <div className="rounded-3xl border border-primary-100 bg-[linear-gradient(165deg,#f7fbff_0%,#eff6ff_100%)] p-8 md:p-10">
               <p className="text-sm font-semibold uppercase tracking-wide text-primary-600">
@@ -299,9 +301,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </AnimatedSection>
 
-        <section className="py-16">
+        <AnimatedSection className="py-16" delay={0.12}>
           <div className="mx-auto max-w-6xl px-6">
             <p className="text-sm font-semibold uppercase tracking-wide text-primary-600">
               Plan działań
@@ -326,9 +328,9 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </AnimatedSection>
 
-        <section id="o-nas" className="bg-surface py-16">
+        <AnimatedSection id="o-nas" className="bg-surface py-16" delay={0.14}>
           <div className="mx-auto grid max-w-6xl gap-6 px-6 md:grid-cols-2">
             <article className="fade-up rounded-3xl border border-border bg-white p-8">
               <h2 className="text-2xl font-bold text-[#0B2F73]">
@@ -350,9 +352,9 @@ export default function Home() {
               </p>
             </article>
           </div>
-        </section>
+        </AnimatedSection>
 
-        <section className="py-16">
+        <AnimatedSection className="py-16" delay={0.16}>
           <div className="mx-auto max-w-6xl px-6">
             <p className="text-sm font-semibold uppercase tracking-wide text-primary-600">
               FAQ
@@ -376,9 +378,9 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </AnimatedSection>
 
-        <section id="dolacz" className="py-16">
+        <AnimatedSection id="dolacz" className="py-16" delay={0.2}>
           <div className="mx-auto max-w-4xl rounded-3xl bg-[linear-gradient(145deg,#072A64_0%,#0A3D91_45%,#0D57C6_100%)] px-6 py-10 text-white shadow-xl shadow-primary-700/25 sm:px-10">
             <p className="text-sm font-semibold uppercase tracking-wide text-white/75">
               Formularz członkowski
@@ -391,49 +393,40 @@ export default function Home() {
               przedstawi kolejne kroki oraz najbliższe działania w Twoim
               regionie.
             </p>
-            <form className="mt-7 grid gap-3 sm:grid-cols-2">
-              <input
-                className="rounded-xl border border-white/30 bg-white/10 px-4 py-3 text-sm placeholder:text-white/70 focus:border-white focus:outline-none"
-                type="text"
-                placeholder="Imię i nazwisko"
-                aria-label="Imię i nazwisko"
-              />
-              <input
-                className="rounded-xl border border-white/30 bg-white/10 px-4 py-3 text-sm placeholder:text-white/70 focus:border-white focus:outline-none"
-                type="email"
-                placeholder="Adres e-mail"
-                aria-label="Adres e-mail"
-              />
-              <input
-                className="rounded-xl border border-white/30 bg-white/10 px-4 py-3 text-sm placeholder:text-white/70 focus:border-white focus:outline-none"
-                type="tel"
-                placeholder="Numer telefonu"
-                aria-label="Numer telefonu"
-              />
-              <input
-                className="rounded-xl border border-white/30 bg-white/10 px-4 py-3 text-sm placeholder:text-white/70 focus:border-white focus:outline-none"
-                type="text"
-                placeholder="Miasto"
-                aria-label="Miasto"
-              />
-              <textarea
-                className="rounded-xl border border-white/30 bg-white/10 px-4 py-3 text-sm placeholder:text-white/70 focus:border-white focus:outline-none sm:col-span-2"
-                rows={3}
-                placeholder="Dlaczego chcesz do nas dołączyć? (opcjonalnie)"
-                aria-label="Dlaczego chcesz do nas dołączyć"
-              />
-              <button
-                className="rounded-xl bg-white px-4 py-3 text-sm font-semibold text-primary-700 transition hover:bg-slate-100 sm:col-span-2"
-                type="button"
-              >
-                Wyślij zgłoszenie
-              </button>
-            </form>
+            <MembershipForm />
             <p className="mt-3 text-xs text-white/70">
               Klikając przycisk, wyrażasz zgodę na kontakt w sprawie członkostwa.
             </p>
           </div>
-        </section>
+        </AnimatedSection>
+
+        <AnimatedSection className="bg-surface py-16" delay={0.22}>
+          <div className="mx-auto max-w-6xl px-6">
+            <p className="text-sm font-semibold uppercase tracking-wide text-primary-600">
+              Jak dołączyć?
+            </p>
+            <h2 className="mt-2 text-3xl font-bold text-[#0B2F73]">
+              Trzy proste kroki do działania z nami
+            </h2>
+            <div className="mt-7 grid gap-4 md:grid-cols-3">
+              {[
+                "Wypełnij formularz i zostaw dane kontaktowe.",
+                "Porozmawiaj z koordynatorem z Twojego regionu.",
+                "Dołącz do najbliższych działań lokalnych i zespołu tematycznego.",
+              ].map((step, index) => (
+                <article
+                  key={step}
+                  className="rounded-2xl border border-border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary-600">
+                    Krok {index + 1}
+                  </p>
+                  <p className="mt-3 text-sm text-text-muted">{step}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </AnimatedSection>
 
         <section className="border-t border-border py-8">
           <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 text-sm text-text-muted md:flex-row">
@@ -444,6 +437,13 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <a
+          href="#dolacz"
+          className="fixed bottom-4 left-1/2 z-30 w-[calc(100%-2rem)] -translate-x-1/2 rounded-full bg-primary-600 px-5 py-3 text-center text-sm font-semibold text-white shadow-xl shadow-primary-600/40 md:hidden"
+        >
+          Dołącz teraz
+        </a>
       </main>
     </div>
   );
